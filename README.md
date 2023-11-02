@@ -55,5 +55,5 @@ It’s time for the famous Simple Shell project. This is one of the most anticip
 ## Authors
 
 - [Hammed Bankole](https://www.github.com/bankole874)
-- []()
+- [Mariam Sanni](https://github.com/mayrhiarm)
 
