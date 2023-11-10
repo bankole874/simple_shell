@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
- * _theatoi - converts a str to an int.
+ * _theatoi - function that convert a string to an integer.
  * @s: arg 1.
- * Return: int.
+ * Return: an integer.
  */
 int _theatoi(char *s)
 {
-	unsigned int	n;
-	int				sign;
-	int				i;
+	unsigned int n;
+	int sign;
+	int i;
 
 	n = 0;
 	i = 0;
@@ -32,3 +32,4 @@ int _theatoi(char *s)
 		return (n);
 	return (-n);
 }
+
