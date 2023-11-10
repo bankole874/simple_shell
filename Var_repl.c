@@ -16,8 +16,8 @@ char *help_var_repl(char *ptr, global_t *global)
 		if (str[i][0] == '$' && str[i][1])
 		{
 			tmp = str[i];
-			if (env_search(str[i] + 1, global))
-				str[i] = _Str_dup(env_search(str[i] + 1, global));
+			if (envSearch(str[i] + 1, global))
+				str[i] = _Str_dup(envSearch(str[i] + 1, global));
 			else
 				str[i] = _Str_dup("");
 			free(tmp);
@@ -57,9 +57,9 @@ char	*var_repl(char *ptr, global_t *global)
 		if (!_Str_comp(ptr + i, "$$", 2) || !_Str_comp(ptr + i, "$?", 2))
 		{
 			if (!_Str_comp(ptr + i, "$$", 2))
-				tmp = _itoa(global->pid);
+				tmp = the_itoa(global->pid);
 			else if (!_Str_comp(ptr + i, "$?", 2))
-				tmp = _itoa(global->exit_code);
+				tmp = the_itoa(global->exit_code);
 			ptr[i] = 0;
 			str = _Str_conc(str, ptr + m);
 			str = _Str_conc(str, tmp);

@@ -17,9 +17,9 @@ char	*_Str_conc(char *s1, char *s2)
 	if (!s2)
 		return (0);
 	if (!s1)
-		s1 = _strdup("");
-	len_1 = _strlen(s1);
-	len_2 = _strlen(s2);
+		s1 = _Str_dup("");
+	len_1 = _Str_len(s1);
+	len_2 = _Str_len(s2);
 	str = malloc(sizeof(char) * len_1 + len_2 + 1);
 	if (!str)
 		return (0);
