@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * theAlias - Implements the alias built-in command to manage command aliases
- * @ptr: The command string passed to the alias command
- * @global: Pointer to the global env struct
- * Return: A modified string or NULL.
+ * theAlias - Uses the alias built-in command to control aliases
+ * @ptr: The string passed to the alias command
+ * @global: Pointer to the global env structure
+ * Return: A string or NULL.
  */
 char *theAlias(char *ptr, global_t *global)
 {
@@ -37,7 +37,7 @@ char *theAlias(char *ptr, global_t *global)
 }
 
 /**
- * isNew - Checks if a given command string contains a new alias definition
+ * isNew - Checks if a given command string has a new alias definition
  * @str: The command string to be checked
  * Return: 1 if the string contains a new alias otherwise 0.
  */
@@ -53,12 +53,14 @@ int isNew(char *str)
 	}
 	return (0);
 }
+
 /**
- * the_aliasprint - Searches for an alias and prints its definition
+ * the_aliasprint - Looks for an alias and prints its definition
  * @str: The alias name to be searched
  * @global: Pointer to the global env struct
  * Return: The alias definition or NULL
  */
+
 char *the_aliasprint(char *str, global_t *global)
 {
 	if (alias_search(str, global))
@@ -72,9 +74,9 @@ char *the_aliasprint(char *str, global_t *global)
 }
 
 /**
- * helpAlias - Provides help info for the alias function
+ * helpAlias - Gives info about the alias function
  * @cmd: Array of cmd strings passed to the alias function
- * @global: Pointer to the global env struct
+ * @global: Pointer to the global env structure
  */
 void helpAlias(char **cmd, global_t *global)
 {
@@ -119,10 +121,11 @@ void helpAlias(char **cmd, global_t *global)
 }
 
 /**
- * the_alias - Handles the alias command, adding or printing aliases.
+ * the_alias - Takes care of the alias command, adds or prints aliases.
  * @cmd: The array of cmd strings passed to the _alias function
  * @global: Pointer to the global env struct
  */
+
 void the_alias(char **cmd, global_t *global)
 {
 	alias_t *ptr = global->alias;
