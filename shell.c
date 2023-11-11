@@ -29,11 +29,11 @@ int main(int ac, char **av, char **env)
 		fd = open(av[1], O_CREAT, S_IRUSR | S_IWUSR);
 		if (fd == -1)
 		{
-			print(global->name, 2, 0);
-			print(": ", 2, 0);
-			print_num_fd(global->n, 2);
-			print(": Can't open ", 2, 0);
-			print(av[1], 2, 1);
+			_print(global->name, 2, 0);
+			_print(": ", 2, 0);
+			Print_num_fd(global->n, 2);
+			_print(": Can't open ", 2, 0);
+			_print(av[1], 2, 1);
 			return (127);
 		}
 	}
@@ -51,6 +51,6 @@ int main(int ac, char **av, char **env)
 		global->n++;
 		free(ptr);
 	}
-	free_All(global);
+	freeAll(global);
 	return (0);
 }

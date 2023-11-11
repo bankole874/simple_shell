@@ -32,18 +32,18 @@ int	count_the_words(char *str, global_t *global)
 
 	if (str[0] == '|' && str[1] && str[1] == '|')
 	{
-		print(global->name, 2, 0);
-		print(": ", 2, 0);
-		putnbr_fd(global->n, 2);
-		print(": Syntax error: \"||\" unexpected", 2, 1);
+		_print(global->name, 2, 0);
+		_print(": ", 2, 0);
+		Print_num_fd(global->n, 2);
+		_print(": Syntax error: \"||\" unexpected", 2, 1);
 		return (count);
 	}
 	if (str[0] == '&' && str[1] && str[1] == '&')
 	{
-		print(global->name, 2, 0);
-		print(": ", 2, 0);
-		putnbr_fd(global->n, 2);
-		print(": Syntax error: \"&&\" unexpected", 2, 1);
+		_print(global->name, 2, 0);
+		_print(": ", 2, 0);
+		Print_num_fd(global->n, 2);
+		_print(": Syntax error: \"&&\" unexpected", 2, 1);
 		return (count);
 	}
 	while (str[i])
