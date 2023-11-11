@@ -84,7 +84,7 @@ static char	*ft_wds_grp(char const *str, char charset)
 }
 
 /**
- *the_split - string array of substrings.
+ *the_split - The string array of substrings
  *@s: first arg
  *@c: sec arg
  *Return: An array of pointers.
