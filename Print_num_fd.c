@@ -2,8 +2,8 @@
 
 /**
  *print_num_fd - A func that print number.
- *@n: arg 1.
- *@fd: arg 2.
+ *@n: first arg
+ *@fd: sec arg
  */
 void	print_num_fd(int n, int fd)
 {

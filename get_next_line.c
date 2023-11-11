@@ -2,9 +2,9 @@
 
 /**
  * _my_memcpy - A func that copy memory area.
- * @dst: arg 1.
- * @src: arg 2.
- * @n: arg 3.
+ * @dst: first arg
+ * @src: sec arg
+ * @n: third arg
  * Return: The Pointer.
  */
 void	*_my_memcpy(void *dst, const void *src, size_t n)
@@ -26,7 +26,7 @@ void	*_my_memcpy(void *dst, const void *src, size_t n)
 
 /**
  * _my_str_len - It calculate the length.
- * @s: arg 1.
+ * @s: first  arg
  * Return: The length.
  */
 size_t	_my_str_len(const char *s)
@@ -41,8 +41,8 @@ size_t	_my_str_len(const char *s)
 
 /**
  * _my_str_conc - It join two strings
- * @s1: arg 1.
- * @s2: arg 2.
+ * @s1: first arg
+ * @s2: sec arg
  * Return: The pointer to the concatenated string.
  */
 char	*_my_str_conc(char *s1, char *s2)
@@ -75,8 +75,8 @@ char	*_my_str_conc(char *s1, char *s2)
 
 /**
  * _my_str_chrc - A func that locate first occurrence of a character.
- * @s: arg 1.
- * @c: arg 2.
+ * @s: first arg
+ * @c: sec arg
  * Return: The pointer or NULL.
  */
 char	*_my_str_chrc(const char *s, int c)

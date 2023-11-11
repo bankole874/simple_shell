@@ -2,8 +2,8 @@
 
 /**
  *help_var_repl - A variables replacement.
- *@ptr: arg 1.
- *@global: arg 2.
+ *@ptr: first arg
+ *@global: sec arg
  *Return: the pointer to modified string.
  */
 char *help_var_repl(char *ptr, global_t *global)
@@ -41,8 +41,8 @@ char *help_var_repl(char *ptr, global_t *global)
 
 /**
  *var_repl - the variables replacement.
- *@ptr: arg 1.
- *@global: arg 2.
+ *@ptr: first arg
+ *@global: sec arg
  *Return: pointer to modified string
  */
 char	*var_repl(char *ptr, global_t *global)

@@ -2,8 +2,8 @@
 
 /**
  *_Str_conc - A func that concatenates two strings.
- *@s1: arg 1.
- *@s2: arg 2.
+ *@s1: first arg
+ *@s2: sec arg
  *Return: A new string.
  */
 char	*_Str_conc(char *s1, char *s2)

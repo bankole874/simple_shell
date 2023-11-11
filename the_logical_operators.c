@@ -115,9 +115,9 @@ char *copy_string(char *str, int *index)
 
 /**
  *the_advanced_split - A function that split words.
- *@str: arg 1.
- *@global: arg 2.
- *Return: array of strings.
+ *@str: first arg
+ *@global: sec arg
+ *Return: the array of strings.
  */
 char **the_advanced_split(char *str, global_t *global)
 {
@@ -138,8 +138,8 @@ char **the_advanced_split(char *str, global_t *global)
 
 /**
  *exe_logical_operators - A func that exec_logical_operators.
- *@str: arg 1.
- *@global: arg 2.
+ *@str: first arg
+ *@global: sec arg
  */
 void exe_logical_operators(char **str, global_t *global)
 {

@@ -2,7 +2,7 @@
 
 /**
  * _Str_dup - A function that duplicates a string.
- * @s1: arg 1.
+ * @s1: first arg
  * Return: new string.
  */
 char	*_Str_dup(const char *s1)

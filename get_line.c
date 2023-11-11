@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
  * _All - It Read from fd.
- * @fd: arg 1.
- * @left: arg 2.
+ * @fd: first arg
+ * @left: sec arg
  * Return: The concatenated string.
  */
 static char	*_All(int fd, char *left)
@@ -31,7 +31,7 @@ static char	*_All(int fd, char *left)
 
 /**
  * the_get_line - It extract one line.
- * @line: arg 1.
+ * @line: first arg
  * Return: The extracted line
  */
 static char	*the_get_line(char *line)
@@ -62,7 +62,7 @@ static char	*the_get_line(char *line)
 
 /**
  * _ft_left - A function that extract the remaining part of the str.
- * @line: arg 1..
+ * @line: first arg
  * Return: The remaining part of the str.
  */
 static char	*_ft_left(char *line)
@@ -87,8 +87,8 @@ static char	*_ft_left(char *line)
 
 /**
  * _get_line - A func that read a line from fd.
- * @fd: arg 1.
- * @global: arg 2.
+ * @fd: first arg
+ * @global: sec arg
  * Return: The next line from the file descriptor,
  * or NULL on failure or end of file.
  */
@@ -100,7 +100,7 @@ char	*_get_line(int fd, global_t *global)
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
-	line = all(fd, left);
+	line = _All(fd, left);
 	next_line = the_get_line(line);
 	left = _ft_left(line);
 	global->left = left;

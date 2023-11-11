@@ -1,7 +1,8 @@
 #include "shell.h"
+
 /**
  *_m_errors - A function that frees memory.
- *@arr: arg 1.
+ *@arr: first arg
  *Return: NULL
  */
 static char	**_m_errors(char	**arr)
@@ -17,8 +18,8 @@ static char	**_m_errors(char	**arr)
 
 /**
  *_ft_cnt_wds - Function that counts the number of words.
- *@str: arg 1.
- *@charset: arg 2.
+ *@str: first arg
+ *@charset: sec arg
  *Return: num of words.
  */
 static int	_ft_cnt_wds(char const *str, char charset)
@@ -42,8 +43,8 @@ static int	_ft_cnt_wds(char const *str, char charset)
 
 /**
  * _ft_wds_len - This func calculate the lenth.
- *@str: arg 1.
- *@charset: arg 2.
+ *@str: first arg
+ *@charset: sec arg
  *Return: the length.
  */
 static int	_ft_wds_len(char const *str, char charset)
@@ -58,9 +59,9 @@ static int	_ft_wds_len(char const *str, char charset)
 
 /**
  *ft_wds_grp - A function that extracts a word.
- *@str: arg 1.
- *@charset: arg 2.
- *Return: ne word.
+ *@str: first arg
+ *@charset: sec arg
+ *Return: new word.
  */
 static char	*ft_wds_grp(char const *str, char charset)
 {
@@ -84,8 +85,8 @@ static char	*ft_wds_grp(char const *str, char charset)
 
 /**
  *the_split - string array of substrings.
- *@s: arg 1.
- *@c: arg 2.
+ *@s: first arg
+ *@c: sec arg
  *Return: An array of pointers.
  */
 char	**the_split(char const *s, char c)

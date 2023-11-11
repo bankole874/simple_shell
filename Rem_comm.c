@@ -2,9 +2,9 @@
 
 /**
  *rem_comm - A function that removes comments from a string.
- *@ptr: arg 1.
- *@global: arg 2.
- *@fd: arg 3.
+ *@ptr: first arg
+ *@global: sec arg
+ *@fd: third arg
  *Return: the string.
  */
 char *rem_comm(char *ptr, global_t *global, int fd)

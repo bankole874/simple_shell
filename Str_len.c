@@ -2,7 +2,7 @@
 
 /**
  *_Str_len - A func that calculate the length.
- *@s: arg 1.
+ *@s: first arg
  *Return: the length.
  */
 size_t	_Str_len(const char *s)

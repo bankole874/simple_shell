@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  *the_handler - signal handler for Ctrl+C=SIGINT.
- *@sig: arg 1.
+ *@sig: first arg
  */
 void the_handler(int sig)
 {
@@ -31,26 +31,26 @@ int main(int ac, char **av, char **env)
 		{
 			print(global->name, 2, 0);
 			print(": ", 2, 0);
-			putnbr_fd(global->n, 2);
+			print_num_fd(global->n, 2);
 			print(": Can't open ", 2, 0);
 			print(av[1], 2, 1);
 			return (127);
 		}
 	}
-	init_env(env, global);
+	initEnv(env, global);
 	global->fd = fd;
 	while (1)
 	{
 		if (isatty(fd))
 			write(1, "$ ", 2);
-		ptr = _getline(fd, global);
-		ptr = remove_comments(ptr, global, fd);
+		ptr = _get_line(fd, global);
+		ptr = rem_comm(ptr, global, fd);
 		global->cmd = ptr;
-		get_commands(ptr, global);
-		executing(global);
+		getCommands(ptr, global);
+		exe(global);
 		global->n++;
 		free(ptr);
 	}
-	free_all(global);
+	free_All(global);
 	return (0);
 }

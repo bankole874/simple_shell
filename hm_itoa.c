@@ -2,7 +2,7 @@
 
 /**
  *_ft_abs - abs.
- *@nb: arg 1.
+ *@nb: first arg
  *Return: pos num.
  */
 static int	_ft_abs(int nb)
@@ -14,7 +14,7 @@ static int	_ft_abs(int nb)
 
 /**
  *_ft_num_pow - pow.
- *@nbr: arg 1.
+ *@nbr: first arg
  *Return: pow.
  */
 static int	_ft_num_pow(int nbr)
@@ -32,7 +32,7 @@ static int	_ft_num_pow(int nbr)
 
 /**
  *the_itoa - int to array of chars.
- *@n: arg 1.
+ *@n: first arg
  *Return: string.
  */
 char	*the_itoa(int n)
