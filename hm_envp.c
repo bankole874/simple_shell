@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * *strCopy1 - Create a copy of a substring from the input string
- * @str: The input string
+ * *strCopy1 - Copies a substring from the input string
+ * @str: The input string from which the substring is copied
  * @idx: A pointer to index from which copying starts
  * @a: The character at which copying stops.
  * Return: The copied substring
@@ -30,12 +30,11 @@ char	*strCopy1(char	*str, int *index, char a)
 }
 
 /**
- * initEnv - Initializes the env variables
- * @envp: array of env var passed
- * @global: pointer to global struct
+ * initEnv - Initialize the env variables
+ * @envp: The arr of env var passed to the program
+ * @global: A pointer to global state struct
  */
-
-void	initEnv(char **envp, global_t *global)
+void initEnv(char **envp, global_t *global)
 {
 	int i;
 	env_t *env;
@@ -48,11 +47,11 @@ void	initEnv(char **envp, global_t *global)
 	{
 		index = 0;
 		env = malloc(sizeof(env_t));
-		env->name = str_copy1(envp[i], &index, '=');
+		env->name = strCopy1(envp[i], &index, '=');
 		index++;
-		env->value = str_copy1(envp[i], &index, 0);
+		env->value = strCopy1(envp[i], &index, 0);
 		env->next = NULL;
-		lstadd_back_env(&head, env);
+		_add_back_env(&head, env);
 		i++;
 	}
 	global->env = head;
@@ -65,20 +64,20 @@ void	initEnv(char **envp, global_t *global)
 }
 
 /**
- * envSearch - finds an env var by name
- * @str: The name of the env var to find
- * @gloabal: A pointer to the global struct
- * Return: int, NULL
+ * envSearch - Searches for an env var by name
+ * @str: The name of the env var to search for
+ * @gloabal: A pointer to the global state struct
+ * Return: The value of the env var if found, NULL if not found
  */
 
-char	*envSearch(char	*str, global_t *global)
+char *envSearch(char	*str, global_t *global)
 {
-	env_t	*ptr;
+	env_t *ptr;
 
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_comp(str, ptr->name, _Str_len(str) + 1))
 			return (ptr->value);
 		ptr = ptr->next;
 	}
@@ -86,22 +85,23 @@ char	*envSearch(char	*str, global_t *global)
 }
 
 /**
- * envSearches - Finds an env var by name
- * @str: The name of the env var to find
- * @global: A pointer to the global struct
- * Return: A pointer, NULL
+ * envSearches - Searches for an env var by name and returns
+ * @str: The name of the env var to search for
+ * @global: A pointer to the global state struct
+ * Return: A pointer to the env var node if found, NULL if not found
  */
 
-env_t *envSearches(char	*str, global_t *global)
+env_t	*envSearches(char *str, global_t *global)
 {
-	env_t	*ptr;
+	env_t *ptr;
 
 	ptr = global->env;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_comp(str, ptr->name, _Str_len(str) + 1))
 			return (ptr);
 		ptr = ptr->next;
 	}
 	return (0);
 }
+
