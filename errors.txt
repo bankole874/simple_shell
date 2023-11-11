@@ -8,36 +8,7 @@ hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
 Set_env.c: In function ‘_Set_env’:
-Set_env.c:19:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
-   19 |   print("Incorrect number of arguements", 2, 1);
-      |   ^~~~~
-      |   _print
-Set_env.c:25:9: error: implicit declaration of function ‘envsearch’; did you mean ‘envSearch’? [-Werror=implicit-function-declaration]
-   25 |   tmp = envsearch(cmd[1], global);
-      |         ^~~~~~~~~
-      |         envSearch
-Set_env.c:25:7: error: assignment to ‘env_t *’ {aka ‘struct env_s *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   25 |   tmp = envsearch(cmd[1], global);
+Set_env.c:25:7: error: assignment to ‘env_t *’ {aka ‘struct env_s *’} from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
+   25 |   tmp = envSearch(cmd[1], global);
       |       ^
-Set_env.c:29:17: error: implicit declaration of function ‘_strdup’; did you mean ‘strdup’? [-Werror=implicit-function-declaration]
-   29 |    tmp->value = _strdup(cmd[2]);
-      |                 ^~~~~~~
-      |                 strdup
-Set_env.c:29:15: error: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   29 |    tmp->value = _strdup(cmd[2]);
-      |               ^
-Set_env.c:35:14: error: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   35 |    tmp->name = _strdup(cmd[1]);
-      |              ^
-Set_env.c:36:15: error: assignment to ‘char *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   36 |    tmp->value = _strdup(cmd[2]);
-      |               ^
-Set_env.c:37:4: error: implicit declaration of function ‘lstadd_back_env’; did you mean ‘_add_back_env’? [-Werror=implicit-function-declaration]
-   37 |    lstadd_back_env(&global->env, tmp);
-      |    ^~~~~~~~~~~~~~~
-      |    _add_back_env
-Set_env.c: In function ‘_unsetenv’:
-Set_env.c:61:8: error: assignment to ‘env_t *’ {aka ‘struct env_s *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   61 |    tmp = envsearch(cmd[i], global);
-      |        ^
 cc1: all warnings being treated as errors
