@@ -119,7 +119,7 @@ void	getCommands(char *ptr, global_t *global);
 int	execBuiltin(char **args, global_t *global);
 void	exe(global_t *global);
 int     printError(char *cmd, char *msg, global_t *global);
-void    environ(char **cmd, global_t *global);
+void    env(char **cmd, global_t *global);
 void	_cd(char **cmd, global_t *global);
 void    myExit(char **cmd, global_t *global);
 void	freeAll(global_t *global);
@@ -139,7 +139,7 @@ char	**the_advanced_split(char *str, global_t *global);
 void	exe_logical_operators(char **str, global_t *global);
 char	*getPath(char *str, global_t *global);
 void	execBinary(command_t *command, global_t *global);
-extern char **_env;
+extern char **environ;
 
 #endif
 
