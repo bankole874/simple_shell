@@ -11,12 +11,12 @@ char *theAlias(char *ptr, global_t *global)
 	int	i = 0;
 	char **str = the_split(ptr, ' '), *str2 = NULL, *tmp;
 
-	while (str[i] && _Str_comp(str[0], "alias", _strlen("alias") + 1))
+	while (str[i] && _Str_comp(str[0], "alias", _Str_len("alias") + 1))
 	{
 		if (thealiassearch(str[i], global))
 		{
 			tmp = str[i];
-			str[i] = _Str_dup(alias_search(str[i], global));
+			str[i] = _Str_dup(the_alias_search(str[i], global));
 			free(tmp);
 		}
 		i++;
@@ -63,10 +63,10 @@ char *the_aliasprint(char *str, global_t *global)
 {
 	if (the_alias_search(str, global))
 	{
-		print(str, 1, 0);
-		print("='", 1, 0);
-		print(the_alias_search(str, global), 1, 0);
-		print("'", 1, 1);
+		_print(str, 1, 0);
+		-print("='", 1, 0);
+		-print(the_alias_search(str, global), 1, 0);
+		_print("'", 1, 1);
 	}
 	return (0);
 }
