@@ -9,16 +9,16 @@
 
 char *getPath(char *str, global_t *global)
 {
-	char	*ptr = _strdup(str), **paths, *tmp;
-	int		i = 0;
+	char *ptr = _Str_dup(str), **paths, *tmp;
+	int i = 0;
 
 	if (!access(ptr, F_OK))
 	{
-		if (!_strncmp(ptr, "/", 1) || !_strncmp(ptr, "./", 2) ||
-			!_strncmp(ptr, "../", 3))
+		if (!_Str_comp(ptr, "/", 1) || !_Str_comp(ptr, "./", 2) ||
+			!_Str_comp(ptr, "../", 3))
 			return (ptr);
 	}
-	paths = split(env_search("PATH", global), ':');
+		paths = the_split(envSearch("PATH", global), ':');
 	if (!paths)
 	{
 		free(ptr);
@@ -26,8 +26,8 @@ char *getPath(char *str, global_t *global)
 	}
 	while (paths[i])
 	{
-		tmp = _strjoin(_strdup(paths[i]), "/");
-		tmp = _strjoin(tmp, ptr);
+		tmp = _Str_conc(_Str_dup(paths[i]), "/");
+		tmp = _Str_conc(tmp, ptr);
 		if (!access(tmp, F_OK))
 		{
 			i = 0;
@@ -52,14 +52,15 @@ char *getPath(char *str, global_t *global)
  * getPaths - retrieves the full paths of commands.
  * @global: second argument.
  */
-void	getPaths(global_t *global)
+
+void getPaths(global_t *global)
 {
-	command_t	*tmp = global->commands;
+	command_t *tmp = global->commands;
 
 	while (tmp)
 	{
 		if (tmp->args)
-			tmp->path = get_path(tmp->args[0], global);
+			tmp->path = getPath(tmp->args[0], global);
 		tmp = tmp->next;
 	}
 }
@@ -69,39 +70,40 @@ void	getPaths(global_t *global)
  * @ptr: first argument.
  * @global: second argument.
  */
-void	getCommands(char *ptr, global_t *global)
-{
-	char	    **commands;
-	int         i = 0;
-	command_t   *node;
 
-	free_commands(global);
+void getCommands(char *ptr, global_t *global)
+{
+	char **commands;
+	int i = 0;
+	command_t *node;
+
+	freeCommands(global);
 	if (!ptr)
 		return;
-	commands = split(ptr, ';');
+	commands = the_split(ptr, ';');
 	while (commands[i])
 	{
-		commands[i] = va_re(alias(commands[i], global), global);
+		commands[i] = var_repl(theAlias(commands[i], global), global);
 		node = malloc(sizeof(command_t));
 		node->path = NULL;
 		node->next = NULL;
 		if (commands[i] && is_lo_op(commands[i]))
 		{
 			node->args = NULL;
-			node->tmp = _strdup(commands[i]);
+			node->tmp = _Str_dup(commands[i]);
 		}
 		else
 		{
-			node->args = split(commands[i], ' ');
+			node->args = the_split(commands[i], ' ');
 			node->tmp = NULL;
 		}
-		lstadd_back_command(&global->commands, node);
+		_add_back_comm(&global->commands, node);
 		i++;
 	}
 	i = 0;
 	while (commands[i])
 		free(commands[i++]);
 	free(commands);
-	get_paths(global);
+	getPaths(global);
 }
 
