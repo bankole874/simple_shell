@@ -64,8 +64,8 @@ char *the_aliasprint(char *str, global_t *global)
 	if (the_alias_search(str, global))
 	{
 		_print(str, 1, 0);
-		-print("='", 1, 0);
-		-print(the_alias_search(str, global), 1, 0);
+		_print("='", 1, 0);
+		_print(the_alias_search(str, global), 1, 0);
 		_print("'", 1, 1);
 	}
 	return (0);
