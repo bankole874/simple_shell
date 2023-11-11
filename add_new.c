@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- *_add_back_env-  A function that add a new node to the end of list.
- *@lst: arg 1.
- *@new: arg 2.
+ *_add_back_env - A function that add a new node to the end of list.
+ *@lst: first arg
+ *@new: sec arg
  */
 void	_add_back_env(env_t **lst, env_t *new)
 {
@@ -24,8 +24,8 @@ void	_add_back_env(env_t **lst, env_t *new)
 
 /**
  *_add_back_comm - A func that add a new node to the end of list.
- *@lst: arg 1.
- *@new: arg 2.
+ *@lst: first arg
+ *@new: sec arg
  */
 void	_add_back_comm(command_t **lst, command_t *new)
 {
@@ -46,8 +46,8 @@ void	_add_back_comm(command_t **lst, command_t *new)
 
 /**
  *_add_back_alias - A func that add a new node to the end of list.
- *@lst: arg 1.
- *@new: arg 2.
+ *@lst: first arg
+ *@new: sec arg
  */
 void	_add_back_alias(alias_t **lst, alias_t *new)
 {
