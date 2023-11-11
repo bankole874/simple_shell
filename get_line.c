@@ -15,7 +15,7 @@ static char *_All(int fd, char *left)
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	while (readed && !my_strchr(left, '\n'))
+	while (readed && !_my_str_chrc(left, '\n'))
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
 		if (readed == -1)
@@ -24,7 +24,7 @@ static char *_All(int fd, char *left)
 			return (NULL);
 		}
 		buffer[readed] = '\0';
-		left = my_strjoin(left, buffer);
+		left = _my_str_conc(left, buffer);
 	}
 	free(buffer);
 	return (left);
@@ -51,7 +51,7 @@ static char *the_get_line(char *line)
 	ptr = malloc(i + 2);
 	if (!ptr)
 		return (NULL);
-	my_memcpy(ptr, line, i);
+	_my_memcpy(ptr, line, i);
 	if (line[i] == '\n')
 	{
 		ptr[i] = '\n';
@@ -80,11 +80,11 @@ static char *_ft_left(char *line)
 		return (NULL);
 	while (line[i] && line[i] != '\n')
 		i++;
-	ptr = malloc(my_strlen(line) - i + 1);
+	ptr = malloc(_my_str_len(line) - i + 1);
 	if (!ptr)
 		return (NULL);
-	my_memcpy(ptr, line + i + 1, my_strlen(line) - i);
-	ptr[my_strlen(line) - i] = '\0';
+	_my_memcpy(ptr, line + i + 1, _my_str_len(line) - i);
+	ptr[_my_str_len(line) - i] = '\0';
 	return (ptr);
 }
 
