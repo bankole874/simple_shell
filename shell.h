@@ -139,7 +139,7 @@ char	**the_advanced_split(char *str, global_t *global);
 void	exe_logical_operators(char **str, global_t *global);
 char	*getPath(char *str, global_t *global);
 void	execBinary(command_t *command, global_t *global);
-extern char **environ;
+extern char **_env;
 
 #endif
 

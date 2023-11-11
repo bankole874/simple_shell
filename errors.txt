@@ -1,31 +1,3 @@
-In file included from add_new.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from get_line.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from get_next_line.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_alias.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
 hm_alias.c: In function ‘theAlias’:
 hm_alias.c:14:46: error: implicit declaration of function ‘_strlen’; did you mean ‘strlen’? [-Werror=implicit-function-declaration]
    14 |  while (str[i] && _Str_comp(str[0], "alias", _strlen("alias") + 1))
@@ -54,13 +26,6 @@ hm_alias.c:95:10: error: assignment to ‘alias_t *’ {aka ‘struct alias_s *�
    95 |     node = the_alias_search(str1, global);
       |          ^
 cc1: all warnings being treated as errors
-In file included from hm_alias_search.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
 hm_alias_search.c: In function ‘thealiassearch’:
 hm_alias_search.c:37:21: error: too many arguments to function ‘_Str_len’
    37 |   if (ptr->name && !_Str_len(str, ptr->name, _Str_len(str) + 1))
@@ -72,63 +37,6 @@ shell.h:108:8: note: declared here
 hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
-In file included from hm_atoi.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_cd.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_env.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_envp.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_errors.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_exec_builtin.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-hm_exec_builtin.c: In function ‘execBuiltin’:
-hm_exec_builtin.c:18:3: error: called object ‘environ’ is not a function or function pointer
-   18 |   environ(args, global);
-      |   ^~~~~~~
-In file included from hm_exec_builtin.c:1:
-shell.h:142:15: note: declared here
-  142 | extern char **environ;
-      |               ^~~~~~~
-In file included from hm_executing.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
 hm_executing.c: In function ‘execBinary’:
 hm_executing.c:15:3: error: implicit declaration of function ‘print_error’; did you mean ‘printError’? [-Werror=implicit-function-declaration]
    15 |   print_error(command->args[0], "not found", global);
@@ -155,55 +63,6 @@ hm_executing.c:57:4: error: implicit declaration of function ‘exec_logical_ope
       |    ^~~~~~~~~~~~~~~~~~~~~~
       |    exe_logical_operators
 cc1: all warnings being treated as errors
-In file included from hm_exit.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_free.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_get_commands.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from hm_itoa.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Print_num_fd.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Rem_comm.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Set_env.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
 Set_env.c: In function ‘_Set_env’:
 Set_env.c:19:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
    19 |   print("Incorrect number of arguements", 2, 1);
@@ -238,59 +97,3 @@ Set_env.c:61:8: error: assignment to ‘env_t *’ {aka ‘struct env_s *’} fr
    61 |    tmp = envsearch(cmd[i], global);
       |        ^
 cc1: all warnings being treated as errors
-In file included from shell.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Sp.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Str_comp.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Str_conc.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Str_dup.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Str_len.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from the_logical_operators.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
-In file included from Var_repl.c:1:
-shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
-  142 | extern char **environ;
-      |               ^~~~~~~
-shell.h:122:9: note: previous declaration of ‘environ’ was here
-  122 | void    environ(char **cmd, global_t *global);
-      |         ^~~~~~~
