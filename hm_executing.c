@@ -17,7 +17,7 @@ void execBinary(command_t *command, global_t *global)
 	}
 	else if (access(command->path, X_OK))
 	{
-		print_error(command->args[0], "Permission denied", global);
+		printError(command->args[0], "Permission denied", global);
 		global->exit_code = 126;
 	}
 	else
