@@ -1,26 +1,14 @@
-hm_alias.c: In function ‘theAlias’:
-hm_alias.c:14:46: error: implicit declaration of function ‘_strlen’; did you mean ‘strlen’? [-Werror=implicit-function-declaration]
-   14 |  while (str[i] && _Str_comp(str[0], "alias", _strlen("alias") + 1))
-      |                                              ^~~~~~~
-      |                                              strlen
-hm_alias.c:19:22: error: implicit declaration of function ‘alias_search’; did you mean ‘thealiassearch’? [-Werror=implicit-function-declaration]
-   19 |    str[i] = _Str_dup(alias_search(str[i], global));
-      |                      ^~~~~~~~~~~~
-      |                      thealiassearch
-hm_alias.c:19:22: error: passing argument 1 of ‘_Str_dup’ makes pointer from integer without a cast [-Werror=int-conversion]
-   19 |    str[i] = _Str_dup(alias_search(str[i], global));
-      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                      |
-      |                      int
-In file included from hm_alias.c:1:
-shell.h:113:7: note: expected ‘const char *’ but argument is of type ‘int’
-  113 | char *_Str_dup(const char *s1);
-      |       ^~~~~~~~
 hm_alias.c: In function ‘the_aliasprint’:
-hm_alias.c:66:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
-   66 |   print(str, 1, 0);
-      |   ^~~~~
-      |   _print
+hm_alias.c:67:4: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
+   67 |   -print("='", 1, 0);
+      |    ^~~~~
+      |    _print
+hm_alias.c:67:3: error: value computed is not used [-Werror=unused-value]
+   67 |   -print("='", 1, 0);
+      |   ^~~~~~~~~~~~~~~~~~
+hm_alias.c:68:3: error: value computed is not used [-Werror=unused-value]
+   68 |   -print(the_alias_search(str, global), 1, 0);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 hm_alias.c: In function ‘helpAlias’:
 hm_alias.c:95:10: error: assignment to ‘alias_t *’ {aka ‘struct alias_s *’} from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
    95 |     node = the_alias_search(str1, global);
