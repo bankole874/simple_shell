@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * environ - Prints the enviroment.
- * @cmd: An array of str
- * @global: Pointer to env struct
+ * environ - Print the enviroment var to the standard output
+ * @cmd: An array of str representing the command and its argument
+ * @global: Pointer to the globlal env struct
  */
 void environ(char **cmd, global_t *global)
 {
@@ -13,11 +13,12 @@ void environ(char **cmd, global_t *global)
 	{
 		if (ptr->name)
 		{
-			print(ptr->name, 1, 0);
-			print("=", 1, 0);
-			print(ptr->value, 1, 1);
+			_print(ptr->name, 1, 0);
+			_print("=", 1, 0);
+			_print(ptr->value, 1, 1);
 		}
 		ptr = ptr->next;
 	}
 	global->exit_code = 0;
 }
+
