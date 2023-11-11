@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
-* execBuiltin - runs built-in command.
-* @args: first argument.
-* @global: second argument.
-* Return: 1
+*execBuiltin - run built-in command.
+*@args: arg 1.
+*@global:arg 2.
+* Return: 1 if the command is a built-in.
 */
 
 int execBuiltin(char **args, global_t *global)
@@ -13,34 +13,36 @@ int execBuiltin(char **args, global_t *global)
 
 	if (!cmd)
 		return (0);
-	else if (!_strncmp("env", cmd, _strlen("env") + 1))
+	else if (!_Str_comp("env", cmd, _Str_len("env") + 1))
 	{
-		env(args, global);
+		environ(args, global);
 		return (1);
 	}
-	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
+	else if (!_Str_comp("cd", cmd, _Str_len("cd") + 1))
 	{
-		cd(args, global);
+		_cd(args, global);
 		return (1);
 	}
-	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))
+	else if (!_Str_comp("exit", cmd, _Str_len("exit") + 1))
 	{
-		my_exit(args, global);
+		myExit(args, global);
 		return (1);
 	}
-	else if (!_strncmp("setenv", cmd, _strlen("setenv") + 1))
+	else if (!_Str_comp("setenv", cmd, _Str_len("setenv") + 1))
 	{
-		_setenv(args, global);
+		_Set_env(args, global);
 		return (1);
 	}
-	else if (!_strncmp("unsetenv", cmd, _strlen("unsetenv") + 1))
+	else if (!_Str_comp("unsetenv", cmd, _Str_len("unsetenv") + 1))
 	{
-		_unsetenv(args, global);
+		_Unset_env(args, global);
 		return (1);
 	}
-	else if (!_strncmp("alias", cmd, _strlen("alias") + 1))
+	else if (!_Str_comp("alias", cmd, _Str_len("alias") + 1))
 	{
-		_alias(args, global);
+		the_alias(args, global);
 		return (1);
 	}
 	return (0);
+}
+
