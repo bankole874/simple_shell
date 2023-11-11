@@ -15,30 +15,10 @@ hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
 hm_executing.c: In function ‘execBinary’:
-hm_executing.c:15:3: error: implicit declaration of function ‘print_error’; did you mean ‘printError’? [-Werror=implicit-function-declaration]
-   15 |   print_error(command->args[0], "not found", global);
+hm_executing.c:20:3: error: implicit declaration of function ‘print_error’; did you mean ‘printError’? [-Werror=implicit-function-declaration]
+   20 |   print_error(command->args[0], "Permission denied", global);
       |   ^~~~~~~~~~~
       |   printError
-hm_executing.c: In function ‘exe’:
-hm_executing.c:51:9: error: implicit declaration of function ‘exec_builtin’; did you mean ‘execBuiltin’? [-Werror=implicit-function-declaration]
-   51 |    if (!exec_builtin(tmp->args, global))
-      |         ^~~~~~~~~~~~
-      |         execBuiltin
-hm_executing.c:52:5: error: implicit declaration of function ‘exec_binary’; did you mean ‘execBinary’? [-Werror=implicit-function-declaration]
-   52 |     exec_binary(tmp, global);
-      |     ^~~~~~~~~~~
-      |     execBinary
-hm_executing.c:56:10: error: implicit declaration of function ‘advanced_split’; did you mean ‘the_advanced_split’? [-Werror=implicit-function-declaration]
-   56 |    str = advanced_split(tmp->tmp, global);
-      |          ^~~~~~~~~~~~~~
-      |          the_advanced_split
-hm_executing.c:56:8: error: assignment to ‘char **’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
-   56 |    str = advanced_split(tmp->tmp, global);
-      |        ^
-hm_executing.c:57:4: error: implicit declaration of function ‘exec_logical_operators’; did you mean ‘exe_logical_operators’? [-Werror=implicit-function-declaration]
-   57 |    exec_logical_operators(str, global);
-      |    ^~~~~~~~~~~~~~~~~~~~~~
-      |    exe_logical_operators
 cc1: all warnings being treated as errors
 Set_env.c: In function ‘_Set_env’:
 Set_env.c:19:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
