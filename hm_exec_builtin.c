@@ -15,7 +15,7 @@ int execBuiltin(char **args, global_t *global)
 		return (0);
 	else if (!_Str_comp("env", cmd, _Str_len("env") + 1))
 	{
-		environ(args, global);
+		env(args, global);
 		return (1);
 	}
 	else if (!_Str_comp("cd", cmd, _Str_len("cd") + 1))
