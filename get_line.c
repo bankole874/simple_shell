@@ -1,20 +1,21 @@
 #include "shell.h"
 /**
- * _All - It Read from fd.
+ * _All - It reads from fd.
  * @fd: first arg
  * @left: sec arg
- * Return: The concatenated string.
+ * Return: the string
  */
-static char	*_All(int fd, char *left)
+
+static char *_All(int fd, char *left)
 {
-	char	*buffer;
-	int		readed;
+	char *buffer;
+	int readed;
 
 	readed = 1;
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	while (readed && !_my_str_chrc(left, '\n'))
+	while (readed && !my_strchr(left, '\n'))
 	{
 		readed = read(fd, buffer, BUFFER_SIZE);
 		if (readed == -1)
@@ -23,7 +24,7 @@ static char	*_All(int fd, char *left)
 			return (NULL);
 		}
 		buffer[readed] = '\0';
-		left = _my_str_conc(left, buffer);
+		left = my_strjoin(left, buffer);
 	}
 	free(buffer);
 	return (left);
@@ -34,10 +35,11 @@ static char	*_All(int fd, char *left)
  * @line: first arg
  * Return: The extracted line
  */
-static char	*the_get_line(char *line)
+
+static char *the_get_line(char *line)
 {
-	int		i;
-	char	*ptr;
+	int i;
+	char *ptr;
 
 	i = 0;
 	if (!line)
@@ -49,7 +51,7 @@ static char	*the_get_line(char *line)
 	ptr = malloc(i + 2);
 	if (!ptr)
 		return (NULL);
-	_my_memcpy(ptr, line, i);
+	my_memcpy(ptr, line, i);
 	if (line[i] == '\n')
 	{
 		ptr[i] = '\n';
@@ -65,10 +67,11 @@ static char	*the_get_line(char *line)
  * @line: first arg
  * Return: The remaining part of the str.
  */
-static char	*_ft_left(char *line)
+
+static char *_ft_left(char *line)
 {
-	int		i;
-	char	*ptr;
+	int i;
+	char *ptr;
 
 	i = 0;
 	if (!line)
@@ -77,26 +80,26 @@ static char	*_ft_left(char *line)
 		return (NULL);
 	while (line[i] && line[i] != '\n')
 		i++;
-	ptr = malloc(_my_str_len(line) - i + 1);
+	ptr = malloc(my_strlen(line) - i + 1);
 	if (!ptr)
 		return (NULL);
-	_my_memcpy(ptr, line + i + 1, _my_str_len(line) - i);
-	ptr[_my_str_len(line) - i] = '\0';
+	my_memcpy(ptr, line + i + 1, my_strlen(line) - i);
+	ptr[my_strlen(line) - i] = '\0';
 	return (ptr);
 }
 
 /**
- * _get_line - A func that read a line from fd.
+ * _get_line - A func that read a line from file description.
  * @fd: first arg
  * @global: sec arg
- * Return: The next line from the file descriptor,
- * or NULL on failure or end of file.
+ * Return: The string, NULL.
  */
-char	*_get_line(int fd, global_t *global)
+
+char *_get_line(int fd, global_t *global)
 {
-	static char	*left;
-	char		*line;
-	char		*next_line;
+	static char *left;
+	char *line;
+	char *next_line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
@@ -107,3 +110,4 @@ char	*_get_line(int fd, global_t *global)
 	free(line);
 	return (next_line);
 }
+

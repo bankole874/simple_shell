@@ -14,7 +14,7 @@ char *the_alias_search(char *str, global_t *global)
 	ptr = global->alias;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_comp(str, ptr->name, _Str_len(str) + 1))
 			return (ptr->value);
 		ptr = ptr->next;
 	}
@@ -34,9 +34,8 @@ alias_t	*thealiassearch(char *str, global_t *global)
 	ptr = global->alias;
 	while (ptr)
 	{
-		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+		if (ptr->name && !_Str_len(str, ptr->name, _Str_len(str) + 1))
 			return (ptr);
 		ptr = ptr->next;
 	}
 	return (0);
-}
