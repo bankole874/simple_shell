@@ -74,9 +74,9 @@ void freeEnv(global_t *global)
 
 void freeAll(global_t *global)
 {
-	free_commands(global);
-	free_env(global);
-	free_alias(global);
+	freeCommands(global);
+	freeEnv(global);
+	freeAlias(global);
 	free(global->cmd);
 	free(global->left);
 	close(global->fd);
