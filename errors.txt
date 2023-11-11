@@ -245,20 +245,6 @@ shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
 shell.h:122:9: note: previous declaration of ‘environ’ was here
   122 | void    environ(char **cmd, global_t *global);
       |         ^~~~~~~
-shell.c: In function ‘main’:
-shell.c:32:4: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
-   32 |    print(global->name, 2, 0);
-      |    ^~~~~
-      |    _print
-shell.c:34:4: error: implicit declaration of function ‘print_num_fd’; did you mean ‘Print_num_fd’? [-Werror=implicit-function-declaration]
-   34 |    print_num_fd(global->n, 2);
-      |    ^~~~~~~~~~~~
-      |    Print_num_fd
-shell.c:54:2: error: implicit declaration of function ‘free_All’; did you mean ‘freeAll’? [-Werror=implicit-function-declaration]
-   54 |  free_All(global);
-      |  ^~~~~~~~
-      |  freeAll
-cc1: all warnings being treated as errors
 In file included from Sp.c:1:
 shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
   142 | extern char **environ;
@@ -301,15 +287,6 @@ shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
 shell.h:122:9: note: previous declaration of ‘environ’ was here
   122 | void    environ(char **cmd, global_t *global);
       |         ^~~~~~~
-the_logical_operators.c: In function ‘count_the_words’:
-the_logical_operators.c:35:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
-   35 |   print(global->name, 2, 0);
-      |   ^~~~~
-      |   _print
-the_logical_operators.c:37:3: error: implicit declaration of function ‘putnbr_fd’ [-Werror=implicit-function-declaration]
-   37 |   putnbr_fd(global->n, 2);
-      |   ^~~~~~~~~
-cc1: all warnings being treated as errors
 In file included from Var_repl.c:1:
 shell.h:142:15: error: ‘environ’ redeclared as different kind of symbol
   142 | extern char **environ;
