@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- *the_handler - signal handler for Ctrl+C=SIGINT.
+ *the_handler - The signal handler for Ctrl+C=SIGINT.
  *@sig: first arg
  */
 void the_handler(int sig)
@@ -12,8 +12,8 @@ void the_handler(int sig)
 /**
  *main - the main function.
  *@ac: The no of arguments
- *@av: Array of arg strings
- *@env: Array of env string
+ *@av: The array of arg strings
+ *@env: The array of env string
  * Return: 0 always
  */
 int main(int ac, char **av, char **env)
