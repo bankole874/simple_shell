@@ -14,12 +14,6 @@ shell.h:108:8: note: declared here
 hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
-hm_executing.c: In function ‘execBinary’:
-hm_executing.c:20:3: error: implicit declaration of function ‘print_error’; did you mean ‘printError’? [-Werror=implicit-function-declaration]
-   20 |   print_error(command->args[0], "Permission denied", global);
-      |   ^~~~~~~~~~~
-      |   printError
-cc1: all warnings being treated as errors
 Set_env.c: In function ‘_Set_env’:
 Set_env.c:19:3: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
    19 |   print("Incorrect number of arguements", 2, 1);
