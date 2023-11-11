@@ -16,49 +16,50 @@ void _Set_env(char **cmd, global_t *global)
 		i++;
 	if (i != 3)
 	{
-		print("Incorrect number of arguements", 2, 1);
+		_print("Incorrect number of arguements", 2, 1);
 		global->exit_code = 127;
 	}
 	else
 	{
 		global->exit_code = 0;
-		tmp = envsearch(cmd[1], global);
+		tmp = envSearch(cmd[1], global);
 		if (tmp)
 		{
 			free(tmp->value);
-			tmp->value = _strdup(cmd[2]);
+			tmp->value = _Str_dup(cmd[2]);
 		}
 		else
 		{
 			tmp = malloc(sizeof(env_t));
 			tmp->next = NULL;
-			tmp->name = _strdup(cmd[1]);
-			tmp->value = _strdup(cmd[2]);
-			lstadd_back_env(&global->env, tmp);
+			tmp->name = _Str_dup(cmd[1]);
+			tmp->value = _Str_dup(cmd[2]);
+			_add_back_env(&global->env, tmp);
 		}
 	}
 }
 
 /**
- *_unsetenv - unset var env.
- *@cmd: arg 1.
- *@global: arg 2.
+ * _Unset_env - unset var env.
+ * @cmd: first argument.
+ * @global: second argument.
  */
-void _unsetenv(char **cmd, global_t *global)
+
+void _Unset_env(char **cmd, global_t *global)
 {
-	env_t	*tmp;
-	int		i = 1;
+	env_t *tmp;
+	int i = 1;
 
 	if (!cmd[1])
 	{
-		print("Too few arguements", 2, 1);
+		_print("Too few arguements", 2, 1);
 		global->exit_code = 127;
 	}
 	else
 	{
 		while (cmd[i])
 		{
-			tmp = envsearch(cmd[i], global);
+			tmp = envSearches(cmd[i], global);
 			if (tmp)
 			{
 				free(tmp->name);
