@@ -4,13 +4,6 @@ hm_alias.c:95:10: error: assignment to ‘alias_t *’ {aka ‘struct alias_s *�
       |          ^
 cc1: all warnings being treated as errors
 hm_alias_search.c: In function ‘thealiassearch’:
-hm_alias_search.c:37:21: error: too many arguments to function ‘_Str_len’
-   37 |   if (ptr->name && !_Str_len(str, ptr->name, _Str_len(str) + 1))
-      |                     ^~~~~~~~
-In file included from hm_alias_search.c:1:
-shell.h:108:8: note: declared here
-  108 | size_t _Str_len(const char *s);
-      |        ^~~~~~~~
 hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
