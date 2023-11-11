@@ -39,24 +39,24 @@ void myExit(char **cmd, global_t *global)
 	if (!cmd[1])
 	{
 		n = global->exit_code;
-		free_all(global);
+		freeAll(global);
 		exit(n);
 	}
 	else
 	{
-		if (!is_num(cmd[1]) || _atoi(cmd[1]) < 0)
+		if (!isNum(cmd[1]) || _theatoi(cmd[1]) < 0)
 		{
-			print(global->name, 2, 0);
-			print(": ", 2, 0);
-			putnbr_fd(global->n, 2);
-			print(": exit: Illegal number: ", 2, 0);
-			print(cmd[1], 2, 1);
+			_print(global->name, 2, 0);
+			_print(": ", 2, 0);
+			Print_num_fd(global->n, 2);
+			_print(": exit: Illegal number: ", 2, 0);
+			_print(cmd[1], 2, 1);
 			global->exit_code = 2;
 		}
 		else
 		{
-			n = _atoi(cmd[1]);
-			free_all(global);
+			n = _theatoi(cmd[1]);
+			freeAll(global);
 			exit((unsigned char)n);
 		}
 	}
