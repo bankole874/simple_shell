@@ -1,14 +1,3 @@
-hm_alias.c: In function ‘the_aliasprint’:
-hm_alias.c:67:4: error: implicit declaration of function ‘print’; did you mean ‘_print’? [-Werror=implicit-function-declaration]
-   67 |   -print("='", 1, 0);
-      |    ^~~~~
-      |    _print
-hm_alias.c:67:3: error: value computed is not used [-Werror=unused-value]
-   67 |   -print("='", 1, 0);
-      |   ^~~~~~~~~~~~~~~~~~
-hm_alias.c:68:3: error: value computed is not used [-Werror=unused-value]
-   68 |   -print(the_alias_search(str, global), 1, 0);
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 hm_alias.c: In function ‘helpAlias’:
 hm_alias.c:95:10: error: assignment to ‘alias_t *’ {aka ‘struct alias_s *’} from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
    95 |     node = the_alias_search(str1, global);
