@@ -5,6 +5,7 @@
  *@str: arg 1.
  *Return: 0 or 1.
  */
+
 int	is_lo_op(char *str)
 {
 	int	i = 0;
@@ -26,6 +27,7 @@ int	is_lo_op(char *str)
  *@global: arg 2.
  *Return: the no of words.
  */
+
 int	count_the_words(char *str, global_t *global)
 {
 	int	count = 0, c = 1, i = 0;
@@ -34,7 +36,7 @@ int	count_the_words(char *str, global_t *global)
 	{
 		_print(global->name, 2, 0);
 		_print(": ", 2, 0);
-		Print_num_fd(global->n, 2);
+		print_num_fd(global->n, 2);
 		_print(": Syntax error: \"||\" unexpected", 2, 1);
 		return (count);
 	}
