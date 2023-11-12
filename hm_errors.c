@@ -10,7 +10,7 @@ int	printError(char *cmd, char *msg, global_t *global)
 {
 	write(2, global->name, _Str_len(global->name));
 	write(2, ": ", 2);
-	Print_num_fd(global->n, 2);
+	print_num_fd(global->n, 2);
 	write(2, ": ", 2);
 	write(2, cmd, _Str_len(cmd));
 	write(2, ": ", 2);
