@@ -16,6 +16,7 @@ void the_handler(int sig)
  *@env: The array of env string
  * Return: 0 always
  */
+
 int main(int ac, char **av, char **env)
 {
 	char		*ptr, fd = 0;
@@ -31,7 +32,7 @@ int main(int ac, char **av, char **env)
 		{
 			_print(global->name, 2, 0);
 			_print(": ", 2, 0);
-			Print_num_fd(global->n, 2);
+			print_num_fd(global->n, 2);
 			_print(": Can't open ", 2, 0);
 			_print(av[1], 2, 1);
 			return (127);
