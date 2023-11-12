@@ -1,14 +1,4 @@
-hm_alias.c: In function ‘helpAlias’:
-hm_alias.c:95:10: error: assignment to ‘alias_t *’ {aka ‘struct alias_s *’} from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
-   95 |     node = the_alias_search(str1, global);
-      |          ^
-cc1: all warnings being treated as errors
 hm_alias_search.c: In function ‘thealiassearch’:
 hm_alias_search.c:41:2: error: expected declaration or statement at end of input
    41 |  return (0);
       |  ^~~~~~
-Set_env.c: In function ‘_Set_env’:
-Set_env.c:25:7: error: assignment to ‘env_t *’ {aka ‘struct env_s *’} from incompatible pointer type ‘char *’ [-Werror=incompatible-pointer-types]
-   25 |   tmp = envSearch(cmd[1], global);
-      |       ^
-cc1: all warnings being treated as errors
