@@ -1,10 +1,11 @@
 #include "shell.h"
 
 /**
- *helpCD - help cd function.
- *@cmd: The pointer to the pointer of the command.
- *@global: The second argument.
+ * helpCD - help cd function.
+ * @cmd: The pointer to the pointer of the command.
+ * @global: The second argument.
  */
+
 void helpCD(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
@@ -22,7 +23,7 @@ void helpCD(char **cmd, global_t *global)
 		{
 			_print(global->name, 2, 0);
 			_print(": ", 2, 0);
-			Print_num_fd(global->n, 2);
+			print_num_fd(global->n, 2);
 			_print(": cd: can't cd to ", 2, 0);
 			_print(cmd[1], 2, 1);
 			free(tmp);
@@ -59,7 +60,7 @@ void helpCD2(char **cmd, global_t *global)
 	{
 		_print(global->name, 2, 0);
 		_print(": ", 2, 0);
-		Print_num_fd(global->n, 2);
+		print_num_fd(global->n, 2);
 		_print(": cd: can't cd to ", 2, 0);
 		_print(cmd[1], 2, 1);
 		free(tmp);
@@ -78,10 +79,11 @@ void helpCD2(char **cmd, global_t *global)
 }
 
 /**
- *_cd - change the current directory.
- *@cmd: arg 1.
- *@global: arg 2.
+ * _cd - change the current directory.
+ * @cmd: first argument.
+ * @global: second argument.
  */
+
 void _cd(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
@@ -99,7 +101,7 @@ void _cd(char **cmd, global_t *global)
 			{
 				_print(global->name, 2, 0);
 				_print(": ", 2, 0);
-				Print_num_fd(global->n, 2);
+				print_num_fd(global->n, 2);
 				_print(": cd: can't cd to ", 2, 0);
 				_print(cmd[1], 2, 1);
 				free(tmp);
