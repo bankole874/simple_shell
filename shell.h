@@ -131,7 +131,7 @@ int	_theatoi(char *s);
 void	_Set_env(char **cmd, global_t *global);
 env_t	*envSearches(char *str, global_t *global);
 void	_Unset_env(char **cmd, global_t *global);
-void	Print_num_fd(int n, int fd);
+void	print_num_fd(int n, int fd);
 char	*strCopy1(char *str, int *index, char a);
 void	the_alias(char **cmd, global_t *global);
 char	*the_alias_search(char	*str, global_t *global);
