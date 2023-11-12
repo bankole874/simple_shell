@@ -1,6 +1,0 @@
-the_logical_operators.c: In function ‘count_the_words’:
-the_logical_operators.c:47:3: error: implicit declaration of function ‘Print_num_fd’; did you mean ‘print_num_fd’? [-Werror=implicit-function-declaration]
-   47 |   Print_num_fd(global->n, 2);
-      |   ^~~~~~~~~~~~
-      |   print_num_fd
-cc1: all warnings being treated as errors
