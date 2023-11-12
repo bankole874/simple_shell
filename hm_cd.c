@@ -43,10 +43,11 @@ void helpCD(char **cmd, global_t *global)
 }
 
 /**
- *helpCD2 - help cd function.
- *@cmd: The pointer to the pointer of the command.
- *@global: The pointer to the global state struct.
+ * helpCD2 - help cd function.
+ * @cmd: The pointer to the pointer of the command.
+ * @global: The pointer to the global state struct.
  */
+
 void helpCD2(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
