@@ -48,7 +48,7 @@ void myExit(char **cmd, global_t *global)
 		{
 			_print(global->name, 2, 0);
 			_print(": ", 2, 0);
-			Print_num_fd(global->n, 2);
+			print_num_fd(global->n, 2);
 			_print(": exit: Illegal number: ", 2, 0);
 			_print(cmd[1], 2, 1);
 			global->exit_code = 2;
