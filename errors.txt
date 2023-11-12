@@ -1,4 +1,12 @@
-hm_alias_search.c: In function ‘thealiassearch’:
-hm_alias_search.c:41:2: error: expected declaration or statement at end of input
-   41 |  return (0);
-      |  ^~~~~~
+/usr/bin/ld: /tmp/ccLnd2rH.o: in function `helpCD':
+hm_cd.c:(.text+0xf8): undefined reference to `Print_num_fd'
+/usr/bin/ld: /tmp/ccLnd2rH.o: in function `helpCD2':
+hm_cd.c:(.text+0x27f): undefined reference to `Print_num_fd'
+/usr/bin/ld: /tmp/ccLnd2rH.o: in function `_cd':
+hm_cd.c:(.text+0x43b): undefined reference to `Print_num_fd'
+/usr/bin/ld: /tmp/ccVFb5oG.o: in function `printError':
+hm_errors.c:(.text+0x65): undefined reference to `Print_num_fd'
+/usr/bin/ld: /tmp/ccIIyBJG.o: in function `myExit':
+hm_exit.c:(.text+0x181): undefined reference to `Print_num_fd'
+/usr/bin/ld: /tmp/ccQLcpzJ.o:shell.c:(.text+0xef): more undefined references to `Print_num_fd' follow
+collect2: error: ld returned 1 exit status

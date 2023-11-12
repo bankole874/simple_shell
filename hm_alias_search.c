@@ -39,3 +39,4 @@ alias_t	*thealiassearch(char *str, global_t *global)
 		ptr = ptr->next;
 	}
 	return (0);
+}
