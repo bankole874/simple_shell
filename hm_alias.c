@@ -79,7 +79,7 @@ char *the_aliasprint(char *str, global_t *global)
 void helpAlias(char **cmd, global_t *global)
 {
 	char *str1, *str2;
-	int		i = 1, index;
+	int i = 1, index;
 	alias_t	*node;
 
 	while (cmd[i])
@@ -92,7 +92,7 @@ void helpAlias(char **cmd, global_t *global)
 			str2 = _Str_dup(cmd[i] + index);
 			if (the_alias_search(str1, global))
 			{
-				node = the_alias_search(str1, global);
+				node = thealiassearch(str1, global);
 				free(str1);
 				free(node->value);
 				node->value = str2;

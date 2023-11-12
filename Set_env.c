@@ -22,7 +22,7 @@ void _Set_env(char **cmd, global_t *global)
 	else
 	{
 		global->exit_code = 0;
-		tmp = envSearch(cmd[1], global);
+		tmp = envSearches(cmd[1], global);
 		if (tmp)
 		{
 			free(tmp->value);

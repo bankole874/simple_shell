@@ -24,10 +24,10 @@
 
 typedef struct command_s
 {
-	char		        *path;
-	char		        **args;
-	char				*tmp;
-	struct command_s	*next;
+	char *path;
+	char **args;
+	char *tmp;
+	struct command_s *next;
 } command_t;
 
 /**
@@ -42,9 +42,9 @@ typedef struct command_s
 
 typedef struct alias_s
 {
-	char		    *name;
-	char		    *value;
-	struct alias_s	*next;
+	char *name;
+	char *value;
+	struct alias_s *next;
 } alias_t;
 
 /**
@@ -56,11 +56,12 @@ typedef struct alias_s
  * Description: singly linked list node structure
  * for env.
  */
+
 typedef struct env_s
 {
-	char		    *name;
-	char		    *value;
-	struct env_s	*next;
+	char *name;
+	char *value;
+	struct env_s *next;
 } env_t;
 
 /**
@@ -79,19 +80,20 @@ typedef struct env_s
  *
  * Description: global variable.
  */
+
 typedef struct global_s
 {
-	command_t   *commands;
-	env_t       *env;
-	alias_t     *alias;
-	int		    exit_code;
-	pid_t       pid;
-	char        *name;
-	char        **envp;
-	char		*cmd;
-	char		*left;
-	int			n;
-	int			fd;
+	command_t *commands;
+	env_t *env;
+	alias_t *alias;
+	int exit_code;
+	pid_t pid;
+	char *name;
+	char **envp;
+	char *cmd;
+	char *left;
+	int n;
+	int fd;
 } global_t;
 
 # define BUFFER_SIZE 1024
@@ -130,10 +132,10 @@ void	_Set_env(char **cmd, global_t *global);
 env_t	*envSearches(char *str, global_t *global);
 void	_Unset_env(char **cmd, global_t *global);
 void	Print_num_fd(int n, int fd);
-char	*strCopy1(char	*str, int *index, char a);
+char	*strCopy1(char *str, int *index, char a);
 void	the_alias(char **cmd, global_t *global);
 char	*the_alias_search(char	*str, global_t *global);
-alias_t	*thealiassearch(char	*str, global_t *global);
+alias_t	*thealiassearch(char *str, global_t *global);
 int	is_lo_op(char *str);
 char	**the_advanced_split(char *str, global_t *global);
 void	exe_logical_operators(char **str, global_t *global);
@@ -142,4 +144,3 @@ void	execBinary(command_t *command, global_t *global);
 extern char **environ;
 
 #endif
-
