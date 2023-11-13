@@ -1,13 +1,14 @@
 #include "shell.h"
 
 /**
- * *strCopy1 - Copies a substring from the input string
+ * strCopy1 - Copies a substring from the input string
  * @str: The input string from which the substring is copied
- * @idx: A pointer to index from which copying starts
+ * @index: A pointer to index from which copying starts
  * @a: The character at which copying stops.
  * Return: The copied substring
  */
-char	*strCopy1(char	*str, int *index, char a)
+
+char *strCopy1(char *str, int *index, char a)
 {
 	int i;
 	int start;
@@ -34,6 +35,7 @@ char	*strCopy1(char	*str, int *index, char a)
  * @envp: The arr of env var passed to the program
  * @global: A pointer to global state struct
  */
+
 void initEnv(char **envp, global_t *global)
 {
 	int i;
@@ -66,11 +68,11 @@ void initEnv(char **envp, global_t *global)
 /**
  * envSearch - Searches for an env var by name
  * @str: The name of the env var to search for
- * @gloabal: A pointer to the global state struct
+ * @global: A pointer to the global state struct
  * Return: The value of the env var if found, NULL if not found
  */
 
-char *envSearch(char	*str, global_t *global)
+char *envSearch(char *str, global_t *global)
 {
 	env_t *ptr;
 
