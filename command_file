@@ -1,0 +1,8 @@
+ls -la
+pwd
+mkdir new_file3
+ls
+mkdir new_directory
+ls
+cd new_directory
+pwd 
