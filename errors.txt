@@ -1,4 +1,0 @@
-hm_envp.c:10: warning: No description found for parameter or member 'index'
-hm_envp.c:11: warning: Excess function parameter 'idx' description in 'strCopy1'
-hm_envp.c:73: warning: No description found for parameter or member 'global'
-hm_envp.c:74: warning: Excess function parameter 'gloabal' description in 'envSearch'
